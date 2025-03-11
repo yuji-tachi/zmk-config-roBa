@@ -27,7 +27,7 @@
         };
 
         muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
+            bindings = <&to_layer_0 GRAVE>;
             key-positions = <11 10>;
         };
 
@@ -41,14 +41,29 @@
             key-positions = <24 25>;
         };
 
-        virtual_right {
-            bindings = <&kp LG(LC(RIGHT_ARROW))>;
+        right_click {
+            bindings = <&mkp MB2>;
             key-positions = <20 19>;
         };
 
-        virtual_left {
-            bindings = <&kp LG(LC(LEFT_ARROW))>;
+        left_click {
+            bindings = <&mkp MB1>;
             key-positions = <19 18>;
+        };
+
+        vd_right {
+            bindings = <&kp LG(LC(RIGHT_ARROW))>;
+            key-positions = <7 8>;
+        };
+
+        vd_left {
+            bindings = <&kp LG(LC(LEFT_ARROW))>;
+            key-positions = <7 6>;
+        };
+
+        middle_click {
+            bindings = <&mkp MB3>;
+            key-positions = <20 21>;
         };
     };
 
@@ -106,10 +121,10 @@
 
         ARROW {
             bindings = <
-&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &trans  &kp N7        &kp N8        &kp N9        &trans
-&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
-&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0
-&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                                            &trans
+&kp ESCAPE      &kp LC(LS(TAB))         &kp UP_ARROW    &kp LC(TAB)              &trans                       &kp MINUS   &kp N7        &kp N8        &kp N9        &kp COLON
+&kp HOME        &kp LEFT_ARROW          &kp DOWN_ARROW  &kp RIGHT_ARROW          &kp END  &trans      &trans  &kp SLASH   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp DOUBLE_QUOTES
+&kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &trans          &kp LG(LS(RIGHT_ARROW))  &trans   &trans      &trans  &kp PERIOD  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0
+&trans          &trans                  &trans          &trans                   &trans   &trans      &trans  &trans                                                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -117,10 +132,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
@@ -133,6 +148,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans  &trans    &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         layer_6 {
