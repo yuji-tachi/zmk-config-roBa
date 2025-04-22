@@ -50,6 +50,21 @@
             bindings = <&mkp MB3>;
             key-positions = <20 21>;
         };
+
+        parentheses {
+            bindings = <&parentheses>;
+            key-positions = <30 31>;
+        };
+
+        braces {
+            bindings = <&braces>;
+            key-positions = <31 32>;
+        };
+
+        brackets {
+            bindings = <&bracket>;
+            key-positions = <33 32>;
+        };
     };
 
     macros {
@@ -58,6 +73,27 @@
             #binding-cells = <1>;
             bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
+        };
+
+        parentheses: parentheses {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ASTERISK &kp LEFT_PARENTHESIS>;
+            label = "PARENTHESES";
+        };
+
+        braces: braces {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_BRACE &kp PIPE>;
+            label = "BRACES";
+        };
+
+        bracket: bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RIGHT_BRACKET &kp NON_US_BACKSLASH>;
+            label = "BRACKET";
         };
     };
 
@@ -77,10 +113,10 @@
 
         default_layer {
             bindings = <
-&mt GRAVE Q       &kp W         &kp E         &kp R                        &kp T                                                                 &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F                        &kp G        &none                              &kp LEFT_BRACKET      &kp H        &kp J  &lt 5 K    &kp L    &kp MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &kp ASTERISK                       &kp LEFT_PARENTHESIS  &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE         &lt 1 ENTER                             &kp DEL
+&mt GRAVE Q       &kp W         &kp E         &kp R                        &kp T                                                             &kp Y        &kp U  &lt 5 I    &kp O    &kp P
+&kp A             &kp S         &kp D         &kp F                        &kp G        &none                              &kp LEFT_BRACKET  &kp H        &kp J  &lt 5 K    &kp L    &kp MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &kp ASTERISK                       &parentheses      &kp N        &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE     &lt 1 ENTER                             &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp UP_ARROW DOWN>;
